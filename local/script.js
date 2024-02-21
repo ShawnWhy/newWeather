@@ -1,6 +1,25 @@
 // const process = require("../node_modules/process")
 // console.log(process);
 // console.log(process.env.apikey);
+var searchOptions = [
+"Currentweather",
+"Forecast",
+"Search",
+"History",
+"Marine",
+"Future",
+"TimeZone",
+"Sports",
+"Astronomy",
+"IP"]
+
+for(i=0;i<searchOptions.length;i++){
+  var option = $("<option>")
+  option.val(searchOptions[i]);
+  option.html(searchOptions[i]);
+  console.log(option);
+  $("#searchOptions").append(option)
+}
 
 $("#submitForm").submit((e) => {
   if ($("#query").val().length>3){
