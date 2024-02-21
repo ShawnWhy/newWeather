@@ -1,7 +1,6 @@
 const express = require("express");
 var path = require("path");
 const axios = require("axios");
-console.log(process.env.apikey);
 const app = express();
 const server = require("http").createServer(app);
 
@@ -30,11 +29,19 @@ const weatherChoices={
 "Astronomy":	"/astronomy.json",
 "IP":"/ip.json"
 }
+const dotenv = require("dotenv");
+dotenv.config();
+var apikey = process.env.apikey;
+console.log("apikey")
+console.log(apikey)
 
-app.get("/api/getWeatherData",async (req,res)=>{
-  var searchUrl = weatherUrlHead + weatherChoices[req.body.choice] + "?key="+apikey+" q="+ req.body.search
+app.post("/api/getWeatherData",async (req,res)=>{
+  console.log(req.body);
+  var searchUrl = weatherUrlHead + weatherChoices[req.body.choice] + "?key="+apikey+"&q="+ req.body.search
+  console.log(searchUrl);
     try {
     const response = await axios.get(searchUrl);
+    console.log(response);
     res.json(response.data);
   } catch (error) {
     res.status(500).json({ error: error.message });
