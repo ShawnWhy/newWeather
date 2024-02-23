@@ -22,9 +22,57 @@
     
 
   </div>
+
+  <div id="controls">
+<div>
+<form id="inputWordsForm">
+  <label for="inputWords">words to to put into the video</label>
+  <input type="text" id="inputWords" name="inputWords"><br><br>
+  <input type="submit" value="Submit">
+</form>
+</div>
+<div>
+<label for="pixleSize">what size would you like the pixles to be:</label>
+<select name="pixleSize" id="sizeSelect">
+  <option value="5">5</option>
+  <option value="10">10</option>
+  <option value="20">20</option>
+  <option value="40">40</option>
+</select> 
+</div>
+<div>
+ <label for="filter">choose a style:</label>
+
+<select name="filter" id="filterSelect">
+  <option value="circles">circles</option>
+  <option value="squares">squares</option>
+  <option value="rumbus">rumbus</option>
+  <option value="words">words</option>
+</select> 
+</div>
+<div>
+ <label for="video">choose a video:</label>
+
+<select name="video" id="videoSelect">
+  <option value="pedler">Peddler</option>
+  <option value="troika">Troika</option>
+</select> 
+</div>
+</div>
+
+<video id="video" src="./troika.mp4" controls="false"></video>
+
+      <canvas id="canvas2" height="600" width="300"
+></canvas>
+
+    <canvas id="canvas1"height="600" style="display:none; z-index:-2"
+></canvas>
+
   
     
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="./script.js"></script>
+  <script src="./index.js"></script>
+
 </body>
 </html>
