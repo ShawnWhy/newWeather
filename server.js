@@ -1,9 +1,4 @@
 
-const random = require("canvas-sketch-util/random");
-
-import style from "./main.css";
-import koro from "./koro.mp4";
-import troika from "./troika.mp4";
 const express = require("express");
 var path = require("path");
 const axios = require("axios");

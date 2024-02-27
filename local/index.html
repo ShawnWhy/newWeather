@@ -7,6 +7,19 @@
     <title>Document</title>
 </head>
 <body>
+
+  <div id="string">
+
+  </div>
+
+<div id="canvasContainer">
+  <div id="curtain"></div>
+<canvas id="canvas2" height="600" width="300"
+></canvas>
+
+    <canvas id="canvas1"height="600" width="300"style="display:none; z-index:-2"
+></canvas>
+</div>
   <form id = "submitForm">
 <select id="searchOptions">
   </select>
@@ -34,39 +47,24 @@
 <div>
 <label for="pixleSize">what size would you like the pixles to be:</label>
 <select name="pixleSize" id="sizeSelect">
-  <option value="5">5</option>
   <option value="10">10</option>
+  <option value="15">15</option>
   <option value="20">20</option>
-  <option value="40">40</option>
+  <option value="25">25</option>
 </select> 
 </div>
 <div>
  <label for="filter">choose a style:</label>
 
 <select name="filter" id="filterSelect">
+    <option value="squares">squares</option>
   <option value="circles">circles</option>
-  <option value="squares">squares</option>
   <option value="rumbus">rumbus</option>
-  <option value="words">words</option>
-</select> 
-</div>
-<div>
- <label for="video">choose a video:</label>
-
-<select name="video" id="videoSelect">
-  <option value="pedler">Peddler</option>
-  <option value="troika">Troika</option>
+ 
 </select> 
 </div>
 </div>
-
-<video id="video" src="./troika.mp4" controls="false"></video>
-
-      <canvas id="canvas2" height="600" width="300"
-></canvas>
-
-    <canvas id="canvas1"height="600" style="display:none; z-index:-2"
-></canvas>
+<video id="video" src="./night clear.MOV" controls="false" loop autoplay preload="true" type="video/mp4"></video>
 
   
     
