@@ -20,6 +20,7 @@
     <canvas id="canvas1"height="600" width="300"style="display:none; z-index:-2"
 ></canvas>
 </div>
+<div id="widgetsContainer">
   <form id = "submitForm">
 <select id="searchOptions">
   </select>
@@ -27,23 +28,22 @@
 <input type="submit">
   </form>
   <div id="container1">
-    <div>condition:<div id = "condition"></div></div>
-    </div>temp C :<div id = "tempc"></div></div>
-    </div>temp F :<div id = "tempf"></div></div>
-    </div>is day? :<div id = "isDay"></div></div>
+    <div class="infoDisplay">condition:<div id = "condition"></div></div>
+    <div class="infoDisplay">temp C :<div id = "tempc"></div></div>
+    <div class="infoDisplay">temp F :<div id = "tempf"></div></div>
+    <div class="infoDisplay">is day? :<div id = "isDay"></div></div>
 
     
 
   </div>
+  <div id="forecast">
+    <div id="forcastdays">
+      
+    </div>
+
+  </div>
 
   <div id="controls">
-<div>
-<form id="inputWordsForm">
-  <label for="inputWords">words to to put into the video</label>
-  <input type="text" id="inputWords" name="inputWords"><br><br>
-  <input type="submit" value="Submit">
-</form>
-</div>
 <div>
 <label for="pixleSize">what size would you like the pixles to be:</label>
 <select name="pixleSize" id="sizeSelect">
@@ -62,6 +62,7 @@
   <option value="rumbus">rumbus</option>
  
 </select> 
+</div>
 </div>
 </div>
 <video id="video" src="./night clear.MOV" controls="false" loop autoplay preload="true" type="video/mp4"></video>

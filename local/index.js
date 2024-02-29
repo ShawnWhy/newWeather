@@ -95,7 +95,7 @@ class Agent {
     context.translate(this.radius, this.radius);
 
     context.beginPath();
-    context.arc(0, 0, this.radius*1.5, 0, Math.PI * 2);
+    context.arc(0, 0, this.radius * 1.5, 0, Math.PI * 2);
     context.fill();
     context.restore();
   }
@@ -123,7 +123,7 @@ class Agent {
 
     context.beginPath();
 
-    context.fillRect(0, 0, this.radius+3, this.radius+5);
+    context.fillRect(0, 0, this.radius + 3, this.radius + 5);
 
     context.fill();
 
@@ -149,16 +149,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     if (video.readyState === 4) {
       if (video.paused) {
-		
         console.log("video is stopping");
         video.play();
-		$("#curtain").css("top", "-100%");
-
-		;
+        $("#curtain").css("top", "-100%");
       } else {
-		;
         video.pause();
-		$("#curtain").css("top", "0%");
+        $("#curtain").css("top", "0%");
       }
     }
   });
@@ -166,19 +162,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
     if (video.readyState === 4) {
       var videoWidth = video.getBoundingClientRect().width;
       var videoHeight = video.getBoundingClientRect().height;
-      // console.log("videoheight"+ videoHeight)
-      // var typeCanvasHeight = videoHeight/cell;
-      // var typeCanvasWidth = videoWidth/cell
       var typeCanvasHeight = videoHeight / cell;
       var typeCanvasWidth = videoWidth / cell;
-      // console.log(typeCanvasHeight)
-      // console.log(typeCanvasWidth)
       typeCanvas.width = typeCanvasWidth;
       typeCanvas.height = typeCanvasHeight;
-      // canvas.height = videoHeight;
-      // canvas.width= videoWidth;
-      // canvas.height = videoHeight;
-      // canvas.width = videoWidth;
+
       clearInterval(checkvideo);
     }
   }, 100);
@@ -245,11 +233,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
               break;
             case "rumbus":
               agent.drawRumbus(context);
-              break;
-            case "words":
-              context.textBaseline = "middle";
-              context.textAlign = "center";
-              agent.drawText(context);
+      
           }
         });
       }
@@ -292,12 +276,8 @@ const tick = () => {
           break;
         case "rumbus":
           agents[i].drawRumbus(context);
-          break;
-        case "words":
-          context.fillStyle = "black";
-          context.textBaseline = "middle";
-          context.textAlign = "center";
-          agents[i].drawText(context);
+        
+    
       }
 
       agents[i].bounce(videoWidth, videoHeight);
@@ -399,25 +379,7 @@ function changeVideo() {
 
 // selectVideos.addEventListener('change', loadVideo())
 
-const wordsInputForm = document.getElementById("inputWordsForm");
-const wordsInput = document.getElementById("inputWords");
 
-wordsInputForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  e.stopPropagation();
-
-  addWords();
-});
-
-function addWords() {
-  var word = wordsInput.value;
-  console.log(wordsInput.value);
-  if (word.length < 20) {
-    inputStrings.push(word);
-    glyphs = glyphs.concat(inputStrings);
-    console.log(glyphs);
-  }
-}
 
 const movePixles = (e) => {
   mousePos = getMousePos(canvas, e);

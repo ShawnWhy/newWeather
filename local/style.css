@@ -61,7 +61,7 @@ canvas {
 }
 
 #controls {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   clear: both;
 }
@@ -77,11 +77,41 @@ video {
 }
 
 #string {
-  height: 300px;
+  padding:0 ! important;
+  margin:0 ! important;
+  height: 500px;
   width: 5px;
   background-color: orange;
   border-radius: 10px;
   position: absolute;
-  top: 50px;
-  left: 80%;
+  top: -50px;
+  left: 40%;
+}
+#container1{
+  display: flex;
+}
+.stringPull{
+  animation: stringPull 1s infinite;
+}
+
+@keyframes stringPull {
+  0% {
+    top: -50px;
+  }
+  50% {
+    top: 50px;
+  }
+  100% {
+    top: -50px;
+  }
+}
+
+#widgetsContainer{
+  width:50%;
+  float:right
+}
+
+.infoDisplay{
+  width: 20%;
+  margin:auto;
 }
