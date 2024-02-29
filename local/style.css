@@ -79,12 +79,12 @@ video {
 #string {
   padding:0 ! important;
   margin:0 ! important;
-  height: 500px;
+  height: 600px;
   width: 5px;
   background-color: orange;
   border-radius: 10px;
   position: absolute;
-  top: -50px;
+  top: -150px;
   left: 40%;
 }
 #container1{
@@ -96,13 +96,16 @@ video {
 
 @keyframes stringPull {
   0% {
-    top: -50px;
+    top: -150px;
   }
   50% {
-    top: 50px;
+    top: -10px;
   }
-  100% {
-    top: -50px;
+  90% {
+    top: -100px;
+  }
+  100%{
+    top:-150px
   }
 }
 

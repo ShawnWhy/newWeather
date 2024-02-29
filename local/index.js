@@ -148,6 +148,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
     //check if video is paused
 
     if (video.readyState === 4) {
+      if (!$("#string").hasClass("stringPull")) {
+        $("#string").addClass("stringPull");
+        setTimeout(() => {
+          $("#string").removeClass("stringPull");
+        }, 500);
+      }
       if (video.paused) {
         console.log("video is stopping");
         video.play();
